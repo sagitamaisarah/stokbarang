@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Stok Masuk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .btn-rounded {
+            border-radius: 10px;
+        }
+        .table thead {
+            background-color: #0d6efd;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <h3 class="mb-3"><i class="fas fa-arrow-down"></i> Data Stok Masuk</h3>
+
+    <a href="masuk_tambah.html" class="btn btn-primary btn-sm mb-3 btn-rounded">
+        <i class="fas fa-plus"></i> Tambah Masuk
+    </a>
+
+    <!-- FORM PENCARIAN -->
+    <form class="row mb-3">
+        <div class="col-md-4">
+            <input type="text" name="cari" class="form-control" placeholder="Cari nama barang...">
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-outline-primary"><i class="fas fa-search"></i> Cari</button>
+        </div>
+    </form>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal Masuk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data Statis -->
+                <tr>
+                    <td>1</td>
+                    <td>Barang A</td>
+                    <td>100</td>
+                    <td>20-07-2025</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Barang B</td>
+                    <td>150</td>
+                    <td>18-07-2025</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Barang C</td>
+                    <td>200</td>
+                    <td>15-07-2025</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Barang D</td>
+                    <td>50</td>
+                    <td>12-07-2025</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="../dashboard.html" class="btn btn-secondary btn-sm mt-2">
+        <i class="fas fa-arrow-left"></i> Kembali ke Dashboard
+    </a>
+</div>
+
+</body>
+</html>

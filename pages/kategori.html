@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Kategori</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .btn-rounded {
+            border-radius: 10px;
+        }
+        .table thead {
+            background-color: #198754;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <h3 class="mb-3"><i class="fas fa-tags"></i> Data Kategori</h3>
+
+    <a href="kategori_tambah.html" class="btn btn-success btn-sm mb-3 btn-rounded">
+        <i class="fas fa-plus"></i> Tambah Kategori
+    </a>
+
+    <!-- Form Pencarian (non-fungsional di HTML murni) -->
+    <form class="row mb-3" method="get">
+        <div class="col-md-4">
+            <input type="text" name="cari" class="form-control" placeholder="Cari kategori...">
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-outline-success">
+                <i class="fas fa-search"></i> Cari
+            </button>
+        </div>
+    </form>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nama Kategori</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Contoh Data Kategori -->
+                <tr>
+                    <td>1</td>
+                    <td>Alat Tulis</td>
+                    <td>
+                        <a href="kategori_edit.html?id=1" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="kategori_hapus.html?id=1" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus kategori ini?')">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Elektronik</td>
+                    <td>
+                        <a href="kategori_edit.html?id=2" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="kategori_hapus.html?id=2" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus kategori ini?')">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+                <!-- Tambahkan baris lainnya sesuai kebutuhan -->
+            </tbody>
+        </table>
+    </div>
+
+    <a href="../dashboard.html" class="btn btn-secondary btn-sm mt-2">
+        <i class="fas fa-arrow-left"></i> Kembali ke Dashboard
+    </a>
+</div>
+
+</body>
+</html>

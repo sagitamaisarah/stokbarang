@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Sistem Stok Barang</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #ccc;
+            padding: 12px 20px;
+            display: block;
+            text-decoration: none;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #495057;
+            color: #fff;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 30px;
+        }
+        .sidebar .logo {
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #495057;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo mb-3"><strong>Stok Barang</strong></div>
+    <a href="dashboard.html" class="active"><i class="fas fa-home me-2"></i> Dashboard</a>
+    <a href="barang.html"><i class="fas fa-box me-2"></i> Data Barang</a>
+    <a href="kategori.html"><i class="fas fa-tags me-2"></i> Kategori</a>
+    <a href="masuk.html"><i class="fas fa-arrow-down me-2"></i> Stok Masuk</a>
+    <a href="keluar.html"><i class="fas fa-arrow-up me-2"></i> Stok Keluar</a>
+    <a href="laporan.html"><i class="fas fa-file-alt me-2"></i> Laporan</a>
+    <a href="logout.html" class="mt-4"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
+</div>
+
+<div class="main-content">
+    <h3>Selamat Datang, <strong>Admin</strong> 👋</h3>
+    <p>Silakan pilih menu dari sidebar untuk mengelola stok barang.</p>
+
+    <div class="row g-4 mt-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-box fa-2x text-primary mb-2"></i>
+                    <h5>Barang</h5>
+                    <p class="text-muted">Lihat dan kelola stok barang</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-arrow-down fa-2x text-success mb-2"></i>
+                    <h5>Stok Masuk</h5>
+                    <p class="text-muted">Catatan barang masuk</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-arrow-up fa-2x text-danger mb-2"></i>
+                    <h5>Stok Keluar</h5>
+                    <p class="text-muted">Catatan barang keluar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

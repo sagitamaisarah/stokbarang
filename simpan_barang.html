@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Barang</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h3>Form Tambah Barang</h3>
+        <form method="POST" action="tambah_barang.html">
+            <div class="mb-3">
+                <label for="kode_barang" class="form-label">Kode Barang</label>
+                <input type="text" name="kode_barang" id="kode_barang" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="nama_barang" class="form-label">Nama Barang</label>
+                <input type="text" name="nama_barang" id="nama_barang" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="kategori" class="form-label">Kategori</label>
+                <input type="text" name="kategori" id="kategori" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="stok" class="form-label">Stok</label>
+                <input type="number" name="stok" id="stok" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="satuan" class="form-label">Satuan</label>
+                <input type="text" name="satuan" id="satuan" class="form-control" required>
+            </div>
+            <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
+            <a href="barang.php" class="btn btn-secondary">Kembali</a>
+        </form>
+
+        <!-- PHP Script to Handle Form Submission -->
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            include 'config/koneksi.php';
+
+            // Sanitize input data
+            $kode      = mysqli_real_escape_string($conn, $_POST['kode_barang']);
+            $nama      = mysqli_real_escape_string($conn, $_POST['nama_barang']);
+            $kategori  = mysqli_real_escape_string($conn, $_POST['kategori']);
+            $stok      = $_POST['stok'];
+            $satuan    = mysqli_real_escape_string($conn, $_POST['satuan']);
+
+            // Insert data into the database
+            $query = mysqli_query($conn, "INSERT INTO barang (kode_barang, nama_barang, kategori, stok, satuan) 
+                                          VALUES ('$kode', '$nama', '$kategori', '$stok', '$satuan')");
+
+            // Check if the query was successful
+            if ($query) {
+                echo "<script>alert('Barang berhasil ditambahkan!'); window.location='barang.php';</script>";
+            } else {
+                echo "<script>alert('Gagal menyimpan barang.'); history.back();</script>";
+            }
+        }
+        ?>
+    </div>
+</body>
+</html>
